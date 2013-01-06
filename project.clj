@@ -4,4 +4,7 @@
                  [compojure "1.1.1"]
                  [hiccup "1.0.0"]]
   :plugins [[lein-ring "0.7.1"]]
+
+  :min-lein-version "2.0.0"
+
   :ring {:handler compojure.example.routes/app})
