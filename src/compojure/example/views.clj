@@ -14,6 +14,17 @@
           [:h1 "Blog Posts"]]
         [:article
           [:header
+            [:h1 "2013-01-06: Quick Nightcap"]]
+          [:section.body
+            [:p "I recently finished reading "
+              [:a {:href "http://www.amazon.com/Moonwalking-Einstein-Science-Remembering-Everything/dp/0143120530/ref=sr_1_1?ie=UTF8&qid=1357522465&sr=8-1&keywords=moonwalking+with+einstein"} "Moonwalking with Einstein"] 
+              ".  It is a fascinating overview into the power of the mind and memory.  I also came 
+              across a neat "
+              [:a {:href "https://sivers.org/srs"} "post"] 
+              " today regarding memorizing new programming languages.  I hope to
+              combine the powers of these two approaches into something more as I learn Clojure."]]]
+        [:article
+          [:header
             [:h1 "2013-01-05: First Post"]]
           [:section.intro
             [:p "This is my new website.  It's funny to think that the old atankanow.com (I'm sure you 
