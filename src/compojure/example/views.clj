@@ -14,6 +14,17 @@
           [:h1 "Blog Posts"]]
         [:article
           [:header
+            [:h1 "2013-01-21: Writing"]]
+          [:section.body
+            [:p "I was at a wedding when I was a boy.  The ceremony and reception were
+            both under a large white tent, on a large well-manicured lawn in front of a palatial
+            summer estate in South-Eastern Massachusetts.  Other than this setting, my only other 
+            memory of that night is one conversation that went something like this."]
+            [:p "One of my dad's friends sat me down and told me the secret to writing: Adam,
+            write something the moment before you go to bed, that way your thoughts become your
+            dreams and your dreams become your words when you write again the next day."]]]
+        [:article
+          [:header
             [:h1 "2013-01-06: Quick Nightcap"]]
           [:section.body
             [:p "I recently finished reading "
