@@ -1,6 +1,12 @@
 (ns compojure.example.views
   (:use [hiccup core page]))
 
+(defn get-blog-post [date]
+  (html5
+    [:body
+      [:p "Test Page: " date
+      ]]))
+
 (defn index-page []
   (html5
     [:head

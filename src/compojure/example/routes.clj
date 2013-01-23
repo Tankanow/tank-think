@@ -8,6 +8,7 @@
 
 (defroutes main-routes
   (GET "/" [] (index-page))
+  (GET "/blog/date/:date" [date] (get-blog-post date))
   (route/resources "/")
   (route/not-found "Page not found"))
 
