@@ -1,14 +1,30 @@
 (ns compojure.example.views
   (:use [hiccup core page]
-        [joodo.views :only (render-template)]))
+        [joodo.views :only (render-template)]
+        [clojure.string :as string :refer [split]]))
 
 (def ^{:private true} current-path
   (. (java.io.File. ".") getCanonicalPath))
 
 (def ^:dynamic blog-post-directory
-    (clojure.java.io/file (str current-path "/src/compojure/example/view/")))
+    (clojure.java.io/file (str current-path "/src/compojure/example/view/blog/post/date")))
 
-(defn blog-post-filenames 
+(defn- post-parts 
+  "doc-string"
+  [post-file-name]
+  (string/split post-file-name #"(\.)|(_)"))
+
+(defn- post-link
+  ""
+  [post-file-name]
+  (str "blog/date/" (first (post-parts post-file-name))))
+
+(defn- post-name
+  ""
+  [post-file-name]
+  (str (first (post-parts post-file-name))))
+
+(defn- blog-post-filenames 
   "doc-string"
   []  
   (map 
@@ -17,15 +33,19 @@
         #(.isDirectory %)
         (file-seq blog-post-directory))))
 
-(defn- test-thunk []
-  (println (blog-post-filenames)))
+(defn- blog-post-filenames-orderby-recent
+  ""
+  []
+  (reverse (blog-post-filenames)))
 
 (defn- blog-post-exists? [post-route]
     (some #(= % (str post-route ".hiccup")) (blog-post-filenames)))
 
+;; Public Methods
+
 (defn find-blog-post [date]
   (if (blog-post-exists? date)
-      (render-template date :template-root "compojure/example/view")
+      (render-template (str  "/blog/post/date/" date) :template-root "compojure/example/view")
       (html5
         [:body
          [:p "Not Found"]])))
@@ -41,6 +61,7 @@
       [:section
         [:header
           [:h1 "Blog Posts"]]
-          (for [current-post-filename (blog-post-filenames)]
-           (list [:p current-post-filename]))
-        ]]))
+          (for [current-post-filename (blog-post-filenames-orderby-recent)]
+           (list [:p 
+                   [:a {:href (post-link current-post-filename)}
+                     (post-name current-post-filename)]]))]]))
