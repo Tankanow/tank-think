@@ -1,0 +1,21 @@
+[:article
+  [:header
+    [:h1 "2013-01-25: A Jump Forward"]]
+  [:section.body
+    [:p "I just added " [:a {:href "https://github.com/slagyr/joodo"} "Joodo"] " to this site.
+    It has made a huge difference!  Now all of the individual posts are in a separate folder
+    and stored as <date>.hiccup.  I use joodo to slurp these files in on the fly and render
+    them.  This way I just need to add new posts in hiccup format in a directory and auto-magically
+    I have a new post and link on the home page."]
+    [:p "I am going to post the code for this blog on "
+    [:a {:href "http://github.com"} "Github"] 
+    " hopefully this weekend."]
+    [:p [:header [:h1 "Story Time"]]
+      "There are two kinds of people in this world: rock and sand.  Rock is not easily written to:
+      it does not easily learn new skills - yet when something is written on rock it lasts forever,
+      that is literally etched in stone.  Sand is easily written to: it easily learns new skills -
+      yet when something is written in sand it can easily be wiped away."]
+  	[:p [:a {:href "https://twitter.com/neal4d"} "Neal Ford"] " said something similar at "
+      [:a {:href "http://nofluffjuststuff.com"} "No Fluff"] " in March of 2012 (excuse my
+      	paraphrasing) - it takes me a long time to learn something new, but I learn it well."]]]
+
