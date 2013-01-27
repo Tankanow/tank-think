@@ -1,6 +1,6 @@
 [:article
   [:header
-    [:h1 "2013-01-25: To The Hub!"]]
+    [:h1 "2013-01-26: To The Hub!"]]
   [:section.body
     [:p "As I promised in my last post, the source code for this site is now available on " 
     [:a {:href "https://github.com/Tankanow/tank-think"} "Github"] "."]]]
