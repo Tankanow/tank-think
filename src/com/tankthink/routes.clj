@@ -1,6 +1,7 @@
 (ns com.tankthink.routes
   (:use compojure.core
         com.tankthink.views
+        com.tankthink.postutils
         [hiccup.middleware :only (wrap-base-url)])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
