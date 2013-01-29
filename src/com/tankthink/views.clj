@@ -14,7 +14,9 @@
       (include-css "/css/style.css")]
     [:body
       [:header 
-      [:h1 "Tank Think"]]
+      [:h1 "Tank Think"]
+      [:aside "You can view this site's " 
+        [:a {:href "https://github.com/Tankanow/tank-think" } "src on Github"]]]
       [:section
         [:header
           [:h1 "Blog Posts"]]
