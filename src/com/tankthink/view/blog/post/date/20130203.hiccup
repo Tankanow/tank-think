@@ -1,0 +1,10 @@
+[:article
+  [:header
+    [:h1 "2013-02-03: Refactoring in Groovy."]]
+  [:section.body
+    [:p "I started studying Fowler's "
+    [:a {:href "http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=sr_1_1?ie=UTF8&qid=1359941311&sr=8-1&keywords=refactoring+improving+the+design"} "Refactoring: Improving the Design of Existing Code"] 
+    ".  I combined this with my desire to learn Groovy, Gradle and Spock into my " 
+    [:a {:href "https://github.com/Tankanow/refactoring-groovy"} "Refactory Groovy"]
+    " project on Github.  I would really appreciate it if you went over and took a peak, maybe create
+    a branch even [Zoidberg]."]]]
