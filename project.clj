@@ -8,4 +8,8 @@
 
   :min-lein-version "2.0.0"
 
-  :ring {:handler com.tankthink.routes/app})
+  :ring {:handler com.tankthink.routes/app}
+
+  :profiles {:dev {:dependencies [[midje "1.4.0"]]
+                 :plugins [[lein-midje "2.0.1"]]}}
+  )
