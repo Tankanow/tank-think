@@ -1,0 +1,20 @@
+[:article
+  [:header
+    [:h1 "2013-02-15: A New Tankanow."]]
+  [:section.body
+    [:p "I'm disappointed that it has been two weeks since my last post.  I really admire the
+    writer so connected to Calliope that daily posts are a welcome relief of building 
+    pressure rather than a recurring reminder of how dry the well can be."]
+    [:p "Earlier this week my wife produced our new muse: Alana Jane Tankanow - our first child.
+    We have spent the last 3 days in enchanted fear: loving her more than we knew we could; 
+    hearing her cry and not knowing what to do; listening to a nurse explain jaundice; and 
+    accepting those things we can't control."]
+    [:p "Luckily, Alana's " 
+      [:a {:href "https://en.wikipedia.org/wiki/Bilirubin"} "Bilirubin"] 
+    " level is now within safe levels for a 3-day-old; therefore, our week-long stay at the hospital is coming to an end."]
+    [:p "Love to all those whose support carried us through this beautiful journey."]
+    [:p "More appreciation than can be expressed to the wonderful staff of " 
+      [:a {:href "http://umassmemorial.org/"} "UMass Memorial Hospital"] 
+    " in "
+      [:a {:href "https://en.wikipedia.org/wiki/Worcester_MA"} "Worcester, Ma"] 
+    " for the unending care and kindness for the past 7 days."]]]
