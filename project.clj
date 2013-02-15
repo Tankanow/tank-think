@@ -1,5 +1,5 @@
 (defproject tank-think "0.1.0"
-  :description "Example Compojure project"
+  :description "Adam Tankanow's Blog: Tank Think"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [compojure "1.1.1"]
                  [hiccup "1.0.0"]

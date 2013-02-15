@@ -9,7 +9,7 @@
 (def ^:dynamic blog-post-directory
     (clojure.java.io/file (str current-path "/src/com/tankthink/view/blog/post/date")))
 
-(defn- post-parts 
+(defn post-parts 
   "Return a list of the parts of the given post name split by .|_"
   [post-file-name]
   (string/split post-file-name #"(\.)|(_)"))
