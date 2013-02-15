@@ -36,7 +36,10 @@
 (defn blog-post-filenames-orderby-recent
   "Return a list of the blog posts in the blog-post-directory ordered by recency"
   []
-  (reverse (sort #(= %1 %2) (blog-post-filenames))))
+  (sort-by
+    #(Integer/parseInt (first (post-parts %)))
+    >
+    (blog-post-filenames)))
 
 (defn- blog-post-exists? 
 	"Return true if the given post exists; false otherwise"
