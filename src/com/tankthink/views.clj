@@ -20,7 +20,8 @@
       [:section
         [:header
           [:h1 "Blog Posts"]]
+        [:ul
           (for [current-post-filename (blog-post-filenames-orderby-recent)]
-           (list [:p 
+           (list [:li 
                    [:a {:href (post-link current-post-filename)}
-                     (post-name current-post-filename)]]))]]))
+                     (post-name current-post-filename)]]))]]]))
