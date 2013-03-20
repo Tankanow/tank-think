@@ -1,0 +1,21 @@
+[:article
+  [:header
+    [:h1 "2013-03-20: Thoughts about Enterprise from a Sleep Deprived Dad."]]
+  [:section.body
+    [:p "The past month has been a " [:a {:href "http://www.imdb.com/title/tt0361862/?ref_=fn_al_tt_1"} "constant fight with sleep deprivation"]
+    " due to the utter lack of empathy in human children (I love you sweetie); so 
+    maybe this needs to be taken with a grain of salt, but I must ask 'Where has all the good enterprise code gone?'"]
+    [:p "I'm currently fascinated by " 
+    [:a {:href "https://en.wikipedia.org/wiki/Clojure"} "Rich Hickey's"] 
+    " presentation " 
+    [:a {:href "http://www.infoq.com/presentations/Simple-Made-Easy"} "Simple Made Easy"] 
+    "; the basic premise therein is that there is a fundamental difference between "
+    [:a {:href "http://www.thefreedictionary.com/simple"} "simple"] 
+    ", that is of or containing 1 thing, and " 
+    [:a {:href "http://www.thefreedictionary.com/easy"} "easy"] 
+    ", that is posing no difficulty.  If we accept this fundamental difference, we realize that it behooves us to create " [:em "simple"] " systems because they are easier to understand and maintain.  To me, simple systems are the only systems that don't violate "
+    [:a {:href "https://en.wikipedia.org/wiki/Single_responsibility_principle"} "SRP"]
+    " arguably the most fundamental principle of software design."]
+    [:p "An example of choosing easy over simple in enterprise that is " [:em "often"] " problematic is the use of an object to representation framework like "
+    [:a {:href "https://en.wikipedia.org/wiki/Java_Architecture_for_XML_Binding"} "JAXB"]
+    ".  The idea of converting objects to representations is not in itself the problem, rather the fact that once we realize we have this easy-to-use library for converting objects to representations (and thus we get serialization for free) we may start to build our entire model out of such objects.  This is completely wrong becuause you are " [:a {:href "http://www.thefreedictionary.com/complect"} "complecting"] " two fundamentally separate ideas together: the domain model and one representation of that domain model.  I can't stand the idea that a schema used by JAXB to generate model objects is the basis of an enterprise domain model.  If you really want to use an architecture to convert objects to representations that you " [:em "must"] " create a separate model for the conversion of domain objects to ready-for-representation objects and that separate model should be nowhere near your Entity Layer (the layer that should contain your domain model)."]]]
