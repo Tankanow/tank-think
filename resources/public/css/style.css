@@ -29,3 +29,15 @@ section header h1 {
 	text-align: left;
 	border: none;	
 }
+
+section aside {
+
+  border: groove 10px blue;
+  padding: 5px;
+  /* the border will curve into a 'D' */  
+  border-radius: 10px 40px 40px 10px;
+  position: relative; top: 5px; left: 25px;
+  width: 450px;
+  font-size: 16px;
+  font-family: "Calibri";
+}
