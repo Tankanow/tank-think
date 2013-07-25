@@ -1,0 +1,29 @@
+[:article
+  [:header
+    [:h1 "2013-07-25: Self-Sufficiency vs Autonomy"]]
+  [:section.body
+    [:p "This " [:a {:href "http://www.infoq.com/news/2013/07/time_for_innovation"} "InfoQ"] " article
+inspired this post."]
+    [:p "In some ways " [:code "Self-Sufficiency"] " and " [:code "Autonomy"] " are synonyms: self-direction and self-governance;
+however, in the context of business, specifically fostering innovation in small teams, there is a
+profound distinction."]
+    [:p [:code "Self-Sufficiency"] " is a quality of the team itself: the team members compose
+a whole that is capable of delivering innovation.  Does the team have the technical skill to
+accomplish its goals?  Self-Sufficiency is bottom-up."]
+    [:p [:code "Autonomy"] " is a quality of the organization: the culture creates an atmosphere that allows 
+for innovation.  Does management give the team the trust to succeed " [:em "or fail"] " on its own.  
+Autonomy is top-down."]
+    [:p "This is a paradox for many enterprises (I'm not speaking directly to the
+software-engineering crowd): the team believes it is self-sufficient but the architect does not
+allow for its autonomy.  This brings to mind the Russian proverb and #16 of the " 
+[:a {:href
+"http://firstround.com/article/42-Rules-to-Lead-by-from-the-Man-Who-Defined-Googles-Product-Strategy#"} "42 Rules to Lead by Google's Jonathan Rosenberg"] 
+": " [:i "Doveryai no proveryai (Trust but Verify)"] "."]
+   [:p "Good advice that most architect's get wrong; for this proverb can be see at least two ways:
+" [:br]
+   [:ol
+    [:li "Don't ever trust anyone: you will just need to verify the work for yourself."]
+    [:li "Trust everyone: you will just need to verify the work."]
+   ]
+   "... and most architect's choose (1) because trust is hard and they're smarter than everyone
+else."]]]
