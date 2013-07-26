@@ -1,0 +1,68 @@
+[:article
+  [:header
+    [:h1 "2013-07-26: Clojure Parallelism with pmap"]]
+  [:section.body
+    [:p "I've been playing around with " [:a {:href "http://clojure.org"} "Clojure"] " a lot
+recently.  Here is a little example of adding parallelism to your clojure code."]
+    [:p "Let's say you want to get some weather data from " [:a {:href
+"http://weather.weatherbug.com"} "Weatherbug"] "."]
+    [:p "We define a method " [:code "raw-weatherdata-from-zipcode"] " that will:"
+      [:ol [:li "construct a URL string from the " [:code "zipcode"] " parameter (and my API key that I've left
+out)"] [:li "parse that data into an xml structure"] [:li "coerce the xml structure into a
+sequence"]]] 
+    [:pre "
+
+(use '[clojure.xml :as cxml])
+
+(defn raw-weatherdata-from-zipcode
+  [^String zipcode]
+  (-> (str \"http://api.wxbug.net/getLiveCompactWeatherRSS.aspx?ACode=\" apikey \"&zipcode=\" zipcode \"&unittype=0\")
+      cxml/parse
+      xml-seq))
+"]
+   [:p "Now that we have a sequence, we can easily filter out the XML elements we want via their
+tag:"
+[:pre "
+(defn struct-from-weathertag
+  [tag xs]
+  (first (filter #(= tag (:tag %)) xs)))
+"]
+
+  [:p "Putting it all together in a function: "
+[:pre "
+(defn city-condition-by-zip
+  [^String zipcode]
+  (let
+    [weather (raw-weatherdata-from-zipcode zipcode)
+     station (struct-from-weathertag :aws:station weather)
+     cc      (struct-from-weathertag :aws:current-condition weather)]
+     (str (-> station :attrs :name) \": \" (-> cc :content first))))
+"]]
+ [:p "We can now get the weather for individual zipcodes:"
+[:pre "
+user=> (city-condition-by-zip \"01602\")
+\"Worcester Regional Airport: Rain Showers\"
+"]
+]
+ [:p "But what if we need to get the weather for a 100 zipcodes.  We can do that simply with the
+fantasic " [:code "map"] " function; so, if we wanted to get the weather conditions for 100 of the
+same zipcode sequentially, we could:"
+[:pre "
+(time
+  (let [result (map city-condition-by-zip (repeat 100 \"01602\"))]
+    (println result)))
+...
+\"Elapsed time: 6287.561 msecs\"
+"]]
+ [:p "That doesn't seem terribly efficient because each result is independent.  It would certainly
+take a lot of code to parallelize this process, right?  Nope.  One measely letter, " [:code "p"] ",
+gets us to where we need to be:"
+[:pre "
+(time
+  (let [result (pmap city-condition-by-zip (repeat 100 \"01602\"))]
+    (println result)))
+...
+\"Elapsed time: 857.029 msecs\"
+"]]
+]]]
+
